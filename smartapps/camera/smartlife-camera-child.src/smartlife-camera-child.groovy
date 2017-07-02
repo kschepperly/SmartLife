@@ -25,16 +25,16 @@ definition(
  
  
 preferences {
-    page(name: "mainPage", title: "Install Video Camera", install: true, uninstall:true) {
+    page(name: "mainPage", title: "Install SmartLife Camera", install: true, uninstall:true) {
         section("Camera Name") {
             label(name: "label", title: "Name This Camera", required: true, multiple: false, submitOnChange: true)
         }
         section("Add a Camera") {
         	input("CameraStreamPathList","enum", title: "Camera Stream Path", description: "Please enter your camera's streaming path", required:false, submitOnChange: true,
             options: [ //add your camera urls here
-            ["rtsp://user:password@[ipaddress]/Streaming/Channels/1":"Name of Camera"], //hikvision
-            ["http://[ipaddress]:[port]/mjpeg.cgi?user=user&password=password&channel=1.mjpeg":"Name of Camera"], //dlink 932l
-            ["http://user:password@[ipaddress]/nphMotionJpeg?Resolution=640x480&Quality=Standard":"Name of Camera"] //panasonic bl-140c
+            ["rtsp://user:password@[ipaddress]/Streaming/Channels/1":"Name of Camera1"], //hikvision
+            ["http://[ipaddress]:[port]/mjpeg.cgi?user=user&password=password&channel=1.mjpeg":"Name of Camera2"], //dlink 932l
+            ["http://user:password@[ipaddress]/nphMotionJpeg?Resolution=640x480&Quality=Standard":"Name of Camera3"] //panasonic bl-140c
             ], displayDuringSetup: true)
         
             
@@ -69,7 +69,7 @@ def initialize() {
         if (cameras) {
             removeChildDevices(getChildDevices())
         }
-        def childDevice = addChildDevice("pstuart", "Generic Video Camera", DNI, null, [name: app.label, label: app.label, completedSetup: true])
+        def childDevice = addChildDevice("camera", "SmartLife Camera", DNI, null, [name: app.label, label: app.label, completedSetup: true])
     } catch (e) {
     	log.error "Error creating device: ${e}"
     }

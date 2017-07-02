@@ -29,11 +29,11 @@ preferences {
     page(name: "mainPage", title: "Existing Camera", install: true, uninstall: true) {
         if(state?.installed) {
             section("Add a New Camera") {
-                app "Generic Video Camera Child", "pstuart", "Generic Video Camera Child", title: "New Camera", page: "mainPage", multiple: true, install: true
+                app "SmartLife Camera Child", "camera", "SmartLife Camera Child", title: "New Camera", page: "mainPage", multiple: true, install: true
             }
         } else {
             section("Initial Install") {
-                paragraph "This smartapp installs the Generic Video Camera Connect App so you can add multiple child video cameras. Click install / done then go to smartapps in the flyout menu and add new cameras or edit existing cameras."
+                paragraph "This smartapp installs the SmartLife Camera Connect App so you can add multiple child video cameras. Click install / done then go to smartapps in the flyout menu and add new cameras or edit existing cameras."
             }
         }
     }
