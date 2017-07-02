@@ -17,7 +17,7 @@ definition(
     name: "SmartLife Camera Connect",
     namespace: "camera",
     author: "Keith Schepperly",
-    description: "This smartapp installs the Generic Video Camera Connect App so you can add multiple child video cameras",
+    description: "This smartapp installs the SmartLife Camera Connect App so you can add multiple child video cameras",
     category: "Safety & Security",
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
