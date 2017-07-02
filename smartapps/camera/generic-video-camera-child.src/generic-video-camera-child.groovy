@@ -1,5 +1,5 @@
 /**
-*  Generic Video Camera Child
+*  Generic SmartLife Camera Child
 *
 *  Copyright 2017 Keith Schepperly
 *
@@ -14,7 +14,7 @@
 *
 */
 definition(
-    name: "Generic Video Camera Child",
+    name: "SmartLife Camera Child",
     namespace: "camera",
     author: "Keith Schepperly",
     description: "Child Video Camera SmartApp",
