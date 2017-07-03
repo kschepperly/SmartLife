@@ -73,7 +73,7 @@ def lanResponseHandler(evt) {
                 def existing = getChildDevice("${DevID}")
         		if(!existing) {
                     log.debug "adding device $it.remoteName with $codename"
-					def d = addChildDevice("rf_ir", "broadlinkSwitch", "${DevID}", location.hubs[0].id, [label:"$it.remoteName", name:"$it.remoteName", completedSetup: true])
+					def d = addChildDevice("kschepperly", "SmartLife Broadlink Switch", "${DevID}", location.hubs[0].id, [label:"$it.remoteName", name:"$it.remoteName", completedSetup: true])
                     d.sendEvent(name:"BLmac", value:macID)
                     d.sendEvent(name:"BLURL", value: urlID)
                     d.sendEvent(name:"onCodeID", value: "${it.id}")
@@ -90,7 +90,7 @@ def lanResponseHandler(evt) {
 			try {
                 def existing = getChildDevice("${DevID}")
             	if(!existing) {
-	               def d = addChildDevice("rf_ir", "broadlinkSwitch", "${DevID}", location.hubs[0].id, [label:"$it.remoteName", name:"$it.remoteName", completedSetup: true])
+	               def d = addChildDevice("kschepperly", "SmartLife Broadlink Switch", "${DevID}", location.hubs[0].id, [label:"$it.remoteName", name:"$it.remoteName", completedSetup: true])
                    d.sendEvent(name: "BLmac", value: macID)
                    d.sendEvent(name:"BLURL", value: urlID)
                    d.sendEvent(name: "offCodeID", value: "${it.id}")
