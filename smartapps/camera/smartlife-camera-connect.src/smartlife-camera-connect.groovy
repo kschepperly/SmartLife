@@ -29,7 +29,7 @@ preferences {
     page(name: "mainPage", title: "Existing Camera", install: true, uninstall: true) {
         if(state?.installed) {
             section("Add a New Camera") {
-                app "SmartLife Camera Child", "camera", "SmartLife Camera Child", title: "New Camera", page: "mainPage", multiple: true, install: true
+                app "SmartLife Camera Child", "kschepperly", "SmartLife Camera Child", title: "New Camera", page: "mainPage", multiple: true, install: true
             }
         } else {
             section("Initial Install") {
