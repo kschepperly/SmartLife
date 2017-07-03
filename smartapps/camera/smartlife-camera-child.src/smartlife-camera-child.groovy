@@ -15,7 +15,7 @@
 */
 definition(
     name: "SmartLife Camera Child",
-    namespace: "camera",
+    namespace: "kschepperly",
     author: "Keith Schepperly",
     description: "SmartLife Camera Child",
     category: "Safety & Security",
