@@ -34,8 +34,6 @@ preferences {
             options: [ //add your camera urls here
             ["rtsp://kschepperly:EmmaRose218@66.229.123.88:554/live/ch0":"Camera: Courtyard Gate External"], //hikvision
             ["rtsp://kschepperly:EmmaRose218@10.0.0.120:554/live/ch0":"Camera: Courtyard Gate Internal"], //hikvision 
-            ["http://kschepperly:EmmaRose218@10.0.0.120:80/live/ch0":"http80"], //hikvision
-            ["http://kschepperly:EmmaRose218@10.0.0.120:554/live/ch0":"http554"], //hikvision 
             ], displayDuringSetup: true)
         
             
