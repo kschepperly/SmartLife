@@ -15,7 +15,7 @@
  */
 definition(
     name: "SmartLife Broadlink LAN",
-    namespace: "rf_ir",
+    namespace: "kschepperly",
     author: "Keith Schepperly",
     description: "Control Broadlink RM Devices using Hub and LAN",
     category: "Convenience",
