@@ -15,7 +15,7 @@
 */
 definition(
     name: "SmartLife Camera Connect",
-    namespace: "camera",
+    namespace: "kschepperly",
     author: "Keith Schepperly",
     description: "This smartapp installs the SmartLife Camera Connect App so you can add multiple child video cameras",
     category: "Safety & Security",
