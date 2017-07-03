@@ -54,4 +54,4 @@ def updated() {
  
 def initialize() {
     state.installed = true
-}
+} 
