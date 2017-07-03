@@ -22,7 +22,7 @@ preferences {
 metadata {
 	definition (name: "SmartLife Broadlink Button", namespace: "kschepperly", author: "Keith Schepperly") 
     {
-		capability "Actuator"
+	capability "Actuator"
         capability "Switch"
         capability "Momentary"
         capability "Sensor"
