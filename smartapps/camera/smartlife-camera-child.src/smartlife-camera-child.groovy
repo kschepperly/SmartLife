@@ -17,7 +17,7 @@ definition(
     name: "SmartLife Camera Child",
     namespace: "camera",
     author: "Keith Schepperly",
-    description: "Child Video Camera SmartApp",
+    description: "SmartLife Camera Child",
     category: "Safety & Security",
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
@@ -32,7 +32,7 @@ preferences {
         section("Add a Camera") {
         	input("CameraStreamPathList","enum", title: "Camera Stream Path", description: "Please enter your camera's streaming path", required:false, submitOnChange: true,
             options: [ //add your camera urls here
-            ["rtsp://kschepperly:EmmaRose218@66.229.123.88:120/live/ch0":"Camera: Courtyard Gate External"], //hikvision
+            ["rtsp://kschepperly:EmmaRose218@66.229.123.88:554/live/ch0":"Camera: Courtyard Gate External"], //hikvision
             ["rtsp://kschepperly:EmmaRose218@10.0.0.120:554/live/ch0":"Camera: Courtyard Gate Internal"], //hikvision 
             ["http://kschepperly:EmmaRose218@10.0.0.120:80/live/ch0":"http80"], //hikvision
             ["http://kschepperly:EmmaRose218@10.0.0.120:554/live/ch0":"http554"], //hikvision 
