@@ -25,11 +25,12 @@ iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.pn
     {
 appSetting "BLURL"
 appSetting "BLmac"
+//appSetting"IPAddress"
  }
 import groovy.json.*
 preferences {
 	page(name: "Page1", title: "Broadlink Switch Importer", install: true, uninstall: true){
-    section("Make sure you have entered ayour local URL:port for the RM Plugin Bridge, along with the broadlink mac address, into the app settings") {
+    section("Make sure you have entered your local URL:port for the RM Plugin Bridge, along with the broadlink mac address, into the app settings") {
 //	input "switchDevices", "device.broadlink", title: "devices to use", multiple: true
 }
 }}
