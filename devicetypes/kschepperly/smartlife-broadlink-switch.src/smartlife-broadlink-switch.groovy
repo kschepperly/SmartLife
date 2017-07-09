@@ -55,8 +55,8 @@ def on() {
 	if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${broadlink_oncode}"){
 		def result = new physicalgraph.device.HubAction(
 				method: "POST",
-				path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${broadlink_oncode}",
-                headers: [HOST: "10.0.0.100:9876"],
+				path: "/send?deviceMac=${BLmac}&codeId=${broadlink_oncode}",
+                headers: [HOST: "${BLURL}"],
                 body: ["entity_id":"${body_data_for_ha}"]
 				)
 			sendHubCommand(result)
@@ -70,8 +70,8 @@ def off() {
 	if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${broadlink_offcode}"){
 		def result = new physicalgraph.device.HubAction(
 				method: "POST",
-                path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${broadlink_offcode}",
-                headers: [HOST: "10.0.0.100:9876"],
+                path: "/send?deviceMac=${BLmac}&codeId=${broadlink_offcode}",
+                headers: [HOST: "${BLURL}"],
                 body: ["entity_id":"${body_data_for_ha}"]
 				)
 
