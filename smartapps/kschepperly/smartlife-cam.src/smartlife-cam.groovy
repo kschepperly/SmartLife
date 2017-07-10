@@ -1,5 +1,5 @@
 /**
-* SmartLife Camera Connect
+* SmartLife Camera
 *
 *  Copyright 2017 Keith Schepperly
 *
@@ -14,10 +14,10 @@
 *
 */
 definition(
-    name: "SmartLife Camera Connect",
+    name: "SmartLife Cam",
     namespace: "kschepperly",
     author: "Keith Schepperly",
-    description: "This smartapp installs the SmartLife Camera Connect App so you can add multiple child video cameras",
+    description: "This smartapp installs the SmartLife Cam App so you can add multiple child video cameras",
     category: "Safety & Security",
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
@@ -29,17 +29,20 @@ definition(
  }
  
 preferences {
-    page(name: "mainPage", title: "Existing Camera", install: true, uninstall: true) {
+    page(name: "mainPage", title: "Camera Setup", install: true, uninstall: true){
+		section("Existing")
+	{
         if(state?.installed) {
             section("Add a New Camera") {
-                app "SmartLife Camera Child", "kschepperly", "SmartLife Camera Child", title: "New Camera", page: "mainPage", multiple: true, install: true
+                app "SmartLife Cam Child", "kschepperly", "SmartLife Cam Child", title: "New Camera", page: "mainPage", multiple: true, install: true
             }
         } else {
             section("Initial Install") {
-                paragraph "This smartapp installs the SmartLife Camera Connect App so you can add multiple child video cameras. Click install / done then go to smartapps in the flyout menu and add new cameras or edit existing cameras."
+                paragraph "This smartapp installs the SmartLife Cam App so you can add multiple child video cameras. Click install / done then go to smartapps in the flyout menu and add new cameras or edit existing cameras."
             }
         }
     }
+}
 }
  
 def installed() {

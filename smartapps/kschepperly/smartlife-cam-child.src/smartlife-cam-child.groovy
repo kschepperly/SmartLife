@@ -1,5 +1,5 @@
 /**
-*  SmartLife Camera Child
+*  SmartLife Cam Child
 *
 *  Copyright 2017 Keith Schepperly
 *
@@ -14,10 +14,10 @@
 *
 */
 definition(
-    name: "SmartLife Camera Child",
+    name: "SmartLife Cam Child",
     namespace: "kschepperly",
     author: "Keith Schepperly",
-    description: "SmartLife Camera Child",
+    description: "SmartLife Cam Child",
     category: "Safety & Security",
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
@@ -69,7 +69,7 @@ def initialize() {
         if (cameras) {
             removeChildDevices(getChildDevices())
         }
-        def childDevice = addChildDevice("kschepperly", "SmartLife Camera", DNI, null, [name: app.label, label: app.label, completedSetup: true])
+        def childDevice = addChildDevice("kschepperly", "SmartLife Cam", DNI, null, [name: app.label, label: app.label, completedSetup: true])
     } catch (e) {
     	log.error "Error creating device: ${e}"
     }
