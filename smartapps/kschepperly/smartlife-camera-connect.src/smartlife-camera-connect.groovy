@@ -23,7 +23,10 @@ definition(
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
     iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
     singleInstance: true)
- 
+ {
+     appSetting "internalIP"
+     appSetting "externalIP"
+ }
  
 preferences {
     page(name: "mainPage", title: "Existing Camera", install: true, uninstall: true) {
