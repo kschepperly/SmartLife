@@ -69,7 +69,7 @@ def initialize() {
         if (cameras) {
             removeChildDevices(getChildDevices())
         }
-        def childDevice = addChildDevice("kschepperly", "SmartLife Cam", DNI, null, [name: app.label, label: app.label, completedSetup: true])
+        def childDevice = addChildDevice("kschepperly", "SmartLife Camera", DNI, null, [name: app.label, label: app.label, completedSetup: true])
     } catch (e) {
     	log.error "Error creating device: ${e}"
     }
