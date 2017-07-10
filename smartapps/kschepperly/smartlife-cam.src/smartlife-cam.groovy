@@ -29,9 +29,7 @@ definition(
  }
  
 preferences {
-    page(name: "mainPage", title: "Camera Setup", install: true, uninstall: true){
-		section("Existing")
-	{
+    page(name: "mainPage", title: "Camera Setup", install: true, uninstall: true) {
         if(state?.installed) {
             section("Add a New Camera") {
                 app "SmartLife Cam Child", "kschepperly", "SmartLife Cam Child", title: "New Camera", page: "mainPage", multiple: true, install: true
@@ -42,7 +40,6 @@ preferences {
             }
         }
     }
-}
 }
  
 def installed() {
