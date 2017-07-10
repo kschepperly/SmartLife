@@ -25,7 +25,7 @@ definition(
  
  
 preferences {
-    page(name: "mainPage", title: "Install SmartLife Camera", install: true, uninstall:true) {
+    page(name: "mainPage", title: "New Camera", install: true, uninstall:true) {
         section("Camera Name") {
             label(name: "label", title: "Name This Camera", required: true, multiple: false, submitOnChange: true)
         }
