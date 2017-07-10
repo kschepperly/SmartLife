@@ -22,7 +22,9 @@ definition(
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
     iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png")
- 
+ {
+ appSetting "internalIP"
+ }
  
 preferences {
     page(name: "mainPage", title: "Install SmartLife Camera", install: true, uninstall:true) {
@@ -34,7 +36,7 @@ preferences {
             options: [ //add your camera urls here
             ["rtsp://kschepperly:EmmaRose218@66.229.123.88:554/live/ch0":"Camera: Courtyard Gate External"], //hikvision
             ["rtsp://kschepperly:EmmaRose218@10.0.0.120:554/live/ch0":"Camera: Courtyard Gate Internal"], //hikvision
-            ["$internalIP":"Camera: Dynamic"],
+            ["${internalIP}":"internal"],
             ], displayDuringSetup: true)
         
             
