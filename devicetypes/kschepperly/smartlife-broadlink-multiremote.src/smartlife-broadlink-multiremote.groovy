@@ -36,8 +36,8 @@ state "default", label: 'Push', action: "momentary.push", icon: "st.Home.home30"
 standardTile("but2", "device.button", width: 1, height: 1, canChangeIcon: true) {
 state "default", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
-main "switch"
-details "switch"
+main ""
+details (["but1", "but2"])
 }
 }
 def parse(String description) {
