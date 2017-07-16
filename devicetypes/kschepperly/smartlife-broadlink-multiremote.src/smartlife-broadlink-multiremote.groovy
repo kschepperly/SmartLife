@@ -31,7 +31,7 @@ simulator {
 // UI tile definitions
 tiles {
 standardTile("but1", "device.button", width: 1, height: 1, canChangeIcon: true) {
-state "default", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
+state "default", label: '$code1', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
 standardTile("but2", "device.button", width: 1, height: 1, canChangeIcon: true) {
 state "default", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
