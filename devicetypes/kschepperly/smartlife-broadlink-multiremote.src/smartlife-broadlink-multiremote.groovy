@@ -16,9 +16,9 @@
 preferences { 
 section("Button 1"){
 input "code1", "text", title: "zBroadlink Code", required: true
-
-
-input "code2", "text", title: "xBroadlink Code", requited: true
+}
+  section("Button 2"){
+    input "code2", "text", title: "xBroadlink Code", requited: true
 }
 }
 metadata {
