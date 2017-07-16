@@ -14,12 +14,8 @@
 *
 */
 preferences { 
-section("Button 1"){
-input "code1", "text", title: "zBroadlink Code", required: true
-}
-  section("Button 2"){
-    input "code2", "text", title: "xBroadlink Code", requited: true
-}
+input "code1", "text", title: "Button 1 Code", required: true
+input "code2", "text", title: "Button 2 Code", requited: true
 }
 metadata {
 definition (name: "SmartLife Broadlink MultiRemote", namespace: "kschepperly", author: "Keith Schepperly") 
@@ -34,16 +30,12 @@ simulator {
 }
 // UI tile definitions
 tiles {
-standardTile("switch", "device.switch", width: 2, height: 2, canChangeIcon: true) {
-state "off", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000 ", nextState: "on"
-state "on", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#008000", nextState: "off"
+standardTile("but1", "device.button", width: 1, height: 1, canChangeIcon: true) {
+state "default", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
-/*standardTile("offButton", "device.button", width: 1, height: 1, canChangeIcon: true) {
-state "default", label: 'Force Off', action: "switch.off", icon: "st.Home.home30", backgroundColor: "#ff0000"
+standardTile("but2", "device.button", width: 1, height: 1, canChangeIcon: true) {
+state "default", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
-standardTile("onButton", "device.button", width: 1, height: 1, canChangeIcon: true) {
-state "default", label: 'Force On', action: "switch.on", icon: "st.Home.home30", backgroundColor: "#008000"
-}*/
 main "switch"
 details "switch"
 }
