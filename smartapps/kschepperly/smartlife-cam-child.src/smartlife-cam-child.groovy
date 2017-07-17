@@ -32,9 +32,10 @@ preferences {
         section("Add a Camera") {
         	input("CameraStreamPathList","enum", title: "Camera Stream Path", description: "Please enter your camera's streaming path", required:false, submitOnChange: true,
             options: [ //add your camera urls here
-            ["rtsp://kschepperly:EmmaRose218@66.229.123.88:554/live/ch0":"Camera: Courtyard Gate External"], //hikvision
-            ["rtsp://kschepperly:EmmaRose218@10.0.0.120:554/live/ch0":"Camera: Courtyard Gate Internal"], //hikvision
-            ["$internalIP":"Camera: Dynamic"],
+            ["rtsp://kschepperly:EmmaRose218@10.0.0.120:554/live/ch0":"Camera: Courtyard Gate"], //hikvision
+            ["rtsp://kschepperly:EmmaRose218@10.0.0.121:554/live/ch0":"Camera: Emma"], //hikvision
+		["rtsp://kschepperly:EmmaRose218@10.0.0.41:554/live/ch0":"Camera: Emma old"], //hikvision
+		["$internalIP":"Camera: Dynamic"],
             ], displayDuringSetup: true)
         
             
