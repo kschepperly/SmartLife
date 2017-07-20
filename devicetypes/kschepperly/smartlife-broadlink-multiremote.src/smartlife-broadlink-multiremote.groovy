@@ -29,7 +29,7 @@ capability "Sensor"
 simulator {
 }
 // UI tile definitions
-tiles {
+tiles (scale: 2) {
 standardTile("but1", "device.button", width: 1, height: 1, canChangeIcon: true) {
 state "default", label: "Power", action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
