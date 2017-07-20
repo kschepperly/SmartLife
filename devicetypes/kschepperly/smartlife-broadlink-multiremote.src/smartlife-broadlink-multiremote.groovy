@@ -30,14 +30,17 @@ simulator {
 }
 // UI tile definitions
 tiles (scale: 2) {
-standardTile("but1", "device.button", width: 1, height: 1, canChangeIcon: true) {
+valueTile("btn_main", "device.btn_main", width: 2, height: 2) { 
+state "val", label:"", defaultState: true 
+}
+standardTile("btn_1", "device.btn_1", width: 1, height: 1, canChangeIcon: true) {
 state "default", label: "Power", action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
-standardTile("but2", "device.button", width: 1, height: 1, canChangeIcon: true) {
-state "default", label: 'Push', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
+standardTile("btn_2", "device.btn_2", width: 1, height: 1, canChangeIcon: true) {
+state "default", label: 'Guide', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
-main "but0"
-details (["but1", "but2"])
+main "btn_main"
+details (["btn_1", "btn_2"])
 }
 }
 def parse(String description) {
