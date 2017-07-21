@@ -31,7 +31,7 @@ simulator {
 // UI tile definitions
 tiles (scale: 2) {
 valueTile("btn_main", "device.btn_main", width: 2, height: 2) { 
-state "val", label:"", defaultState: true 
+state "val", label:"", defaultState: true, icon: "st.Home.home30"
 }
 standardTile("btn_1", "device.btn_1", width: 1, height: 1, canChangeIcon: true) {
 state "default", label: "Power", action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
