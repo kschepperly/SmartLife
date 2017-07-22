@@ -45,7 +45,7 @@ standardTile("btn_2", "device.btn_2", width: 1, height: 1, canChangeIcon: true, 
 state "default", label: 'Mute', action: "Push2", icon: "st.Home.home30", backgroundColor: "#ffffff"
 }
 main "btn_main"
-details (["btn_1", "btn_2"])
+details (["lbl_Soundbar", "btn_1", "btn_2"])
 }
 }
 def parse(String description) {
