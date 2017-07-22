@@ -24,6 +24,8 @@ capability "Actuator"
 capability "Switch"
 capability "Momentary"
 capability "Sensor"
+command "Push1"
+command "Push2"
 }
 // simulator metadata
 simulator {
@@ -33,11 +35,11 @@ tiles (scale: 2) {
 valueTile("btn_main", "device.btn_main", width: 2, height: 2) { 
 state "val", label:"", defaultState: true, icon: "st.Home.home30"
 }
-standardTile("btn_1", "device.btn_1", width: 1, height: 1, canChangeIcon: true) {
-state "default", label: "Power", action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
+standardTile("btn_1", "device.btn_1", width: 1, height: 1, canChangeIcon: true, canChangeBackground: true) {
+state "default", label: "Power", action: "Push1", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
-standardTile("btn_2", "device.btn_2", width: 1, height: 1, canChangeIcon: true) {
-state "default", label: 'Guide', action: "momentary.push", icon: "st.Home.home30", backgroundColor: "#ff0000"
+standardTile("btn_2", "device.btn_2", width: 1, height: 1, canChangeIcon: true, canChangeBackground: true) {
+state "default", label: 'Guide', action: "Push2", icon: "st.Home.home30", backgroundColor: "#ff0000"
 }
 main "btn_main"
 details (["btn_1", "btn_2"])
@@ -46,25 +48,44 @@ details (["btn_1", "btn_2"])
 def parse(String description) {
 log.debug(description)
 }
-def push() {
-if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${broadlink_code}"){
-def result = new physicalgraph.device.HubAction(
-method: "POST",
-path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${broadlink_code}",
-headers: [HOST: "10.0.0.100:9876"],
-body: ["entity_id":"${body_data_for_ha}"]
-)
-sendHubCommand(result)
-sendEvent(name: "switch", value: "on", isStateChange: true, display: false)
-sendEvent(name: "switch", value: "off", isStateChange: true, display: false)
-sendEvent(name: "momentary", value: "pushed", isStateChange: true)
+def Push1() {
+    if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code1}"){
+	   def result = new physicalgraph.device.HubAction(
+		  method: "POST",
+		  path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${code1}",
+		  headers: [HOST: "10.0.0.100:9876"],
+		  body: ["entity_id":"${body_data_for_ha}"]
+		  )
+	   sendHubCommand(result)
+	   //sendEvent(name: "switch", value: "on", isStateChange: true, display: false)
+	   //sendEvent(name: "switch", value: "off", isStateChange: true, display: false)
+	   sendEvent(name: "momentary", value: "pushed", isStateChange: true)
 log.debug "Executing Push" 
 log.debug result
 }
 }
+
+def Push2() {
+    if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code2}"){
+	   def result = new physicalgraph.device.HubAction(
+		  method: "POST",
+		  path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${code2}",
+		  headers: [HOST: "10.0.0.100:9876"],
+		  body: ["entity_id":"${body_data_for_ha}"]
+		  )
+	   sendHubCommand(result)
+	   //sendEvent(name: "switch", value: "on", isStateChange: true, display: false)
+	   //sendEvent(name: "switch", value: "off", isStateChange: true, display: false)
+	   sendEvent(name: "momentary", value: "pushed", isStateChange: true)
+log.debug "Executing Push" 
+log.debug result
+}
+}
+
 def on() {
 push()
 }
+
 def off() {
 push()
 }
