@@ -33,10 +33,10 @@ simulator {
 // UI tile definitions
 tiles (scale: 2) {
 valueTile("btn_main", "device.btn_main", width: 2, height: 2) { 
-state "val", label:"", defaultState: true, icon: "st.Home.home30"
+state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
 }
 valueTile("lbl_Soundbar", "device.lbl_Soundbar", width: 6, height: 1) { 
-state "val", label:"JBL Cinema Base", backgroundColor: "#ffffff"
+state "val", label:"JBL Cinema Base", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png", backgroundColor: "#ffffff"
 }
 standardTile("btn_1", "device.btn_1", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
 state "default", label: "Power", action: "Push1", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Power.png", backgroundColor: "#ffffff"
