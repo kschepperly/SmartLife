@@ -24,6 +24,7 @@ capability "Actuator"
 capability "Switch"
 capability "Momentary"
 capability "Sensor"
+command "Push"
 command "Push1"
 command "Push2"
 }
