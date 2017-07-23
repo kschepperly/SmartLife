@@ -15,9 +15,12 @@
 */
 preferences { 
 input "code1", "text", title: "Code 1", required: true
-input "label1", "text", title: "Label 1", required: true
 input "code2", "text", title: "Code 2", required: true
-input "label2", "text", title: "Label 2", required: true
+input "code3", "text", title: "Code 3", required: true
+input "code4", "text", title: "Code 4", required: true
+input "code5", "text", title: "Code 5", required: true
+input "code6", "text", title: "Code 6", required: true
+
 }
 metadata {
 definition (name: "SmartLife Broadlink MultiRemote", namespace: "kschepperly", author: "Keith Schepperly") 
@@ -45,17 +48,17 @@ tiles (scale: 2) {
 valueTile("btn_main", "device.btn_main", width: 2, height: 2) { 
 state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
 }
-standardTile("lbl_Soundbar", "null", width: 5, height: 1, decoration: "flat") { 
-state "empty", label:"JBL Cinema Base", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png", defaultState: true, backgroundColor: "Transparent"
+standardTile("lbl_1", "null", width: 4, height: 1, decoration: "flat") { 
+state "empty", label:"JBL Cinema Base", defaultState: true
 }
-valueTile("spacer1", "device.spacer1", width: 1, height: 1) { 
-state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
+valueTile("spc_1", "device.spacer1", width: 2, height: 1) { 
+state "val", label:"", defaultState: true
 }
 standardTile("btn_1", "device.btn_1", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: "${label1}", action: "Push1", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Power.png", backgroundColor: "Transparent"
+state "default", label: 'Power', action: "Push1", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Power.png", backgroundColor: "Transparent"
 }
 standardTile("btn_2", "device.btn_2", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: "${label2}", action: "Push2", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
+state "default", label: 'Mute', action: "Push2", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
 standardTile("btn_3", "device.btn_3", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
 state "default", label: 'Vol Down', action: "Push3", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
@@ -63,8 +66,15 @@ state "default", label: 'Vol Down', action: "Push3", icon: "http://i96.photobuck
 standardTile("btn_4", "device.btn_4", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
 state "default", label: 'Vol Up', action: "Push4", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
+
+standardTile("btn_5", "device.btn_5", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
+state "default", label: 'Optical', action: "Push5", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
+}
+standardTile("btn_6", "device.btn_6", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
+state "default", label: 'Bluetooth', action: "Push6", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
+}
 main"btn_main"
-details (["lbl_Soundbar", "spacer1", "btn_1", "btn_2", "btn_3", "btn_4"])
+details (["lbl_1", "spc_1", "btn_1", "btn_2", "btn_3", "btn_4", "btn_5", "btn_6"])
 }
 }
 def parse(String description) {
@@ -88,6 +98,16 @@ def Push4() {
 	def code = "${code4}"
 	Push(code)
 }
+def Push5() {
+	def code = "${code5}"
+	Push(code)
+}
+
+def Push6() {
+	def code = "${code6}"
+	Push(code)
+}
+
 def Push(code) {
     if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code}"){
 	   def result = new physicalgraph.device.HubAction(
