@@ -58,15 +58,15 @@ log.debug(description)
 
 def Push1() {
 	def code = "${code1}"
-	Push()
+	Push(code)
 }
 
 def Push2() {
 	def code = "${code2}"
-	Push()
+	Push(code)
 }
 
-def Push() {
+def Push(code) {
     if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code}"){
 	   def result = new physicalgraph.device.HubAction(
 		  method: "POST",
