@@ -14,8 +14,10 @@
 *
 */
 preferences { 
-input "code1", "text", title: "Button 1 Code", required: true
-input "code2", "text", title: "Button 2 Code", requited: true
+input "code1", "text", title: "Code 1", required: true
+input "label1", "text", title: "Label 1", required: true
+input "code2", "text", title: "Code 2", required: true
+input "label2", "text", title: "Label 2", required: true
 }
 metadata {
 definition (name: "SmartLife Broadlink MultiRemote", namespace: "kschepperly", author: "Keith Schepperly") 
@@ -56,10 +58,10 @@ standardTile("btn_2", "device.btn_2", width: 1, height: 1, decoration: "flat", c
 state "default", label: 'Mute', action: "Push2", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
 standardTile("btn_3", "device.btn_3", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: 'Volume Down', action: "Push3", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
+state "default", label: 'Vol Down', action: "Push3", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
 standardTile("btn_4", "device.btn_4", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: 'Volume Up', action: "Push4", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
+state "default", label: 'Vol Up', action: "Push4", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
 main"btn_main"
 details (["lbl_Soundbar", "spacer1", "btn_1", "btn_2", "btn_3", "btn_4"])
