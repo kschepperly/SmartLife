@@ -27,6 +27,13 @@ capability "Sensor"
 command "Push"
 command "Push1"
 command "Push2"
+command "Push3"
+command "Push4"
+command "Push5"
+command "Push6"
+command "Push7"
+command "Push8"
+command "Push9"
 }
 // simulator metadata
 simulator {
@@ -48,7 +55,13 @@ state "default", label: "Power", action: "Push1", icon: "http://i96.photobucket.
 standardTile("btn_2", "device.btn_2", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
 state "default", label: 'Mute', action: "Push2", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
-main "btn_main"
+standardTile("btn_3", "device.btn_3", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
+state "default", label: 'Volume Down', action: "Push3", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
+}
+standardTile("btn_4", "device.btn_4", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
+state "default", label: 'Volume Up', action: "Push4", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
+}
+main"btn_main"
 details (["lbl_Soundbar", "spacer1", "btn_1", "btn_2"])
 }
 }
@@ -65,7 +78,14 @@ def Push2() {
 	def code = "${code2}"
 	Push(code)
 }
-
+def Push3() {
+	def code = "${code3}"
+	Push(code)
+}
+def Push4() {
+	def code = "${code4}"
+	Push(code)
+}
 def Push(code) {
     if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code}"){
 	   def result = new physicalgraph.device.HubAction(
