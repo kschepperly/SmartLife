@@ -36,7 +36,10 @@ tiles (scale: 2) {
 valueTile("btn_main", "device.btn_main", width: 2, height: 2) { 
 state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
 }
-standardTile("lbl_Soundbar", "null", width: 6, height: 1, decoration: "flat") { 
+valueTile("spacer1", "device.spacer1", width: 2, height: 1) { 
+state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
+}
+standardTile("lbl_Soundbar", "null", width: 4, height: 1, decoration: "flat") { 
 state "empty", label:"", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Label_JBL%20Cinema%20Base.png", defaultState: true, backgroundColor: "#ffffff"
 }
 standardTile("btn_1", "device.btn_1", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
@@ -46,7 +49,7 @@ standardTile("btn_2", "device.btn_2", width: 1, height: 1, decoration: "flat", c
 state "default", label: 'Mute', action: "Push", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "#ffffff"
 }
 main "btn_main"
-details (["lbl_Soundbar", "btn_1", "btn_2"])
+details (["lbl_Soundbar", "spacer1", "btn_1", "btn_2"])
 }
 }
 def parse(String description) {
