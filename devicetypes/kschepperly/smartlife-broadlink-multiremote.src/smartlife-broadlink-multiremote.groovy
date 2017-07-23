@@ -36,13 +36,13 @@ valueTile("btn_main", "device.btn_main", width: 2, height: 2) {
 state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
 }
 standardTile("lbl_Soundbar", "device.lbl_Soundbar", width: 6, height: 1, decoration: "flat") { 
-state "default", label:"http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Label_JBL%20Cinema%20Base.png", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png", backgroundColor: "#ffffff"
+state "default", label:"", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Label_JBL%20Cinema%20Base.png", backgroundColor: "#ffffff"
 }
 standardTile("btn_1", "device.btn_1", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: "Power", action: "Push1", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Power.png", backgroundColor: "#ffffff"
+state "default", label: "Power", action: "Push", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Power.png", backgroundColor: "#ffffff"
 }
 standardTile("btn_2", "device.btn_2", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: 'Mute', action: "Push2", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "#ffffff"
+state "default", label: 'Mute', action: "Push", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "#ffffff"
 }
 main "btn_main"
 details (["lbl_Soundbar", "btn_1", "btn_2"])
@@ -51,44 +51,28 @@ details (["lbl_Soundbar", "btn_1", "btn_2"])
 def parse(String description) {
 log.debug(description)
 }
+
 def Push1() {
-    if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code1}"){
-	   def result = new physicalgraph.device.HubAction(
-		  method: "POST",
-		  path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${code1}",
-		  headers: [HOST: "10.0.0.100:9876"],
-		  body: ["entity_id":"${body_data_for_ha}"]
-		  )
-	   sendHubCommand(result)
-	   //sendEvent(name: "switch", value: "on", isStateChange: true, display: false)
-	   //sendEvent(name: "switch", value: "off", isStateChange: true, display: false)
-	   sendEvent(name: "momentary", value: "pushed", isStateChange: true)
-log.debug "Executing Push" 
-log.debug result
-}
+	def code = "${code1}"
+	Push()
 }
 
 def Push2() {
-    if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code2}"){
+	def code = "${code2}"
+	Push()
+}
+
+def Push() {
+    if ("/send?deviceMac=34ea34bb1b08&codeId=" + "${code}"){
 	   def result = new physicalgraph.device.HubAction(
 		  method: "POST",
-		  path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${code2}",
+		  path: "/send?deviceMac=34ea34bb1b08&codeId=" + "${code}",
 		  headers: [HOST: "10.0.0.100:9876"],
 		  body: ["entity_id":"${body_data_for_ha}"]
 		  )
 	   sendHubCommand(result)
-	   //sendEvent(name: "switch", value: "on", isStateChange: true, display: false)
-	   //sendEvent(name: "switch", value: "off", isStateChange: true, display: false)
 	   sendEvent(name: "momentary", value: "pushed", isStateChange: true)
 log.debug "Executing Push" 
 log.debug result
 }
-}
-
-def on() {
-push()
-}
-
-def off() {
-push()
 }
