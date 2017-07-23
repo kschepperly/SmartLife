@@ -37,16 +37,16 @@ valueTile("btn_main", "device.btn_main", width: 2, height: 2) {
 state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
 }
 standardTile("lbl_Soundbar", "null", width: 5, height: 1, decoration: "flat") { 
-state "empty", label:"", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Label_JBL%20Cinema%20Base.png", defaultState: true, backgroundColor: "#ffffff"
+state "empty", label:"JBL Cinema Base", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png", defaultState: true, backgroundColor: "Transparent"
 }
 valueTile("spacer1", "device.spacer1", width: 1, height: 1) { 
 state "val", label:"", defaultState: true, icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Transparent.png"
 }
 standardTile("btn_1", "device.btn_1", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: "Power", action: "Push", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Power.png", backgroundColor: "#ffffff"
+state "default", label: "Power", action: "Push", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Power.png", backgroundColor: "Transparent"
 }
 standardTile("btn_2", "device.btn_2", width: 1, height: 1, decoration: "flat", canChangeIcon: true, canChangeBackground: true) {
-state "default", label: 'Mute', action: "Push", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "#ffffff"
+state "default", label: 'Mute', action: "Push", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
 main "btn_main"
 details (["lbl_Soundbar", "spacer1", "btn_1", "btn_2"])
