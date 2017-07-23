@@ -62,7 +62,7 @@ standardTile("btn_4", "device.btn_4", width: 1, height: 1, decoration: "flat", c
 state "default", label: 'Volume Up', action: "Push4", icon: "http://i96.photobucket.com/albums/l181/kcs317/SmartThings/Mute.png", backgroundColor: "Transparent"
 }
 main"btn_main"
-details (["lbl_Soundbar", "spacer1", "btn_1", "btn_2"])
+details (["lbl_Soundbar", "spacer1", "btn_1", "btn_2", "btn_3", "btn_4"])
 }
 }
 def parse(String description) {
